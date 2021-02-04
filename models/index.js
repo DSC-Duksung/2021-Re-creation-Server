@@ -11,6 +11,7 @@ const sequelize = new Sequelize(
 )
 
 db.User = require('./user')(sequelize, Sequelize);
+db.Image = require('./image')(sequelize, Sequelize);
 db.Category = require('./category')(sequelize, Sequelize);
 db.Step = require('./step')(sequelize, Sequelize);
 

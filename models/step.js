@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Step.associate = (db) => {
-        
+        db.Step.belongsTo(db.Category);
     };
 
     return Step;

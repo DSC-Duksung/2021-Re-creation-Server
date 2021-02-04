@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Category.associate = (db) => {
-        db.Category.belongsTo(db.User);
+        db.Category.hasMany(db.Image, { as: 'Images' });
+        db.Category.hasMany(db.Step, { as: 'Steps' });
     };
 
     return Category;
