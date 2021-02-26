@@ -2,14 +2,13 @@ const express = require('express');
 const { User, Image } = require('../models');
 const router = express.Router();
 
-router.get('/', async (req, res, next) => { // TODO: isLoggedIn
+router.get('/mypage', async (req, res, next) => { // TODO: isLoggedIn
     try {
         const user = await User.findOne({
-            where: { id: 2 }, // TODO: req.user.id
+            where: { id: req.user.id },
             include: [{
                 model: Image,
                 as: 'Images',
-                attributes: ['id'], // 개수 세기 위함
             }],
         });
 
